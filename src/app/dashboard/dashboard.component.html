@@ -1,0 +1,7 @@
+<h2>Top Matriculas</h2>
+<div class="matriculas-menu">
+    <a *ngFor="let matricula of matriculas"
+    routerLink="/detail/{{matricula.id}}">
+    {{matricula.nomealuno}}
+  </a>  
+</div>

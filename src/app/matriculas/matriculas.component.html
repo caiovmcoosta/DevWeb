@@ -1,0 +1,21 @@
+<h2>My Matriculas</h2>
+
+<div>
+  <label for="new-matricula">Matricula Nome: </label>
+  <input id="new-matricula" #matriculaName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(matriculaName.value); MatriculaName.value='matricula'">
+    Add matricula
+  </button>
+</div>
+
+<ul class="matriculas">
+  <li *ngFor="let matricula of mmatriculas">
+    <a routerLink="/detail/{{matricula.id}}">
+      <span class="badge">{{matricula.id}}</span> {{matricula.nomealuno}}
+    </a>
+    <button type="button" class="delete" title="delete matricula"
+      (click)="delete(matricula)">x</button>
+  </li>
+</ul>
